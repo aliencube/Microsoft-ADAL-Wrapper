@@ -17,7 +17,7 @@
   test_script:
   - cmd: tools\nuget restore AdalWrapper.sln
   - cmd: msbuild "test\AdalWrapper.Tests\AdalWrapper.Tests.csproj" /t:ReBuild /v:minimal /p:Configuration=Debug;TargetFrameworkVersion=v4.5;DefineConstants="DEBUG;TRACE";OutPutPath=bin\Debug\net45
-  - cmd: packages\xunit.runner.console.2.1.0\tools\xunit.console.exe test\AdalWrapper.Tests\bin\Debug\Aliencube.AdalWrapper.Tests.dll -appveyor
+  - cmd: packages\xunit.runner.console.2.1.0\tools\xunit.console.exe test\AdalWrapper.Tests\bin\Debug\net45\Aliencube.AdalWrapper.Tests.dll -appveyor
 
 # for release/all branch
 -

@@ -1,5 +1,7 @@
 # Microsoft ADAL Wrapper #
 
+[![Build status](https://ci.appveyor.com/api/projects/status/euwt8ald8yam5ptc/branch/dev?svg=true)](https://ci.appveyor.com/project/justinyoo/microsoft-adal-wrapper/branch/dev) | [![](https://img.shields.io/nuget/v/Aliencube.AdalWrapper.svg)](https://www.nuget.org/packages/Aliencube.AdalWrapper)
+
 This provides a wrapper library for ADAL - [https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory).
 
 ADAL provides many classes marked as `sealed`. This doesn't only prevent us from inheriting, but also blocks mocking. In order to mock those classes, we need wrapper classes for them. This library provides wrapper classes for those defined in ADAL.
