@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Aliencube.AdalWrapper")]
+[assembly: AssemblyTitle("Aliencube.AdalWrapper.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Aliencube.AdalWrapper")]
+[assembly: AssemblyProduct("Aliencube.AdalWrapper.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e6a430f3-5865-4c81-85e6-e78d8d24f0a9")]
+[assembly: Guid("c6e678ae-6150-4355-a950-ac16916806fb")]
 
 // Version information for an assembly consists of the following four values:
 //

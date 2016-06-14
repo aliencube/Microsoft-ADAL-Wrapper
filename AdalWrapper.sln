@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2EAECD7E-FD5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdalWrapper", "src\AdalWrapper\AdalWrapper.csproj", "{E6A430F3-5865-4C81-85E6-E78D8D24F0A9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9035F580-E911-49E2-9BFF-364A808D9EE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdalWrapper.Tests", "test\AdalWrapper.Tests\AdalWrapper.Tests.csproj", "{C6E678AE-6150-4355-A950-AC16916806FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,11 +30,16 @@ Global
 		{E6A430F3-5865-4C81-85E6-E78D8D24F0A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6A430F3-5865-4C81-85E6-E78D8D24F0A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6A430F3-5865-4C81-85E6-E78D8D24F0A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E678AE-6150-4355-A950-AC16916806FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E678AE-6150-4355-A950-AC16916806FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E678AE-6150-4355-A950-AC16916806FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E678AE-6150-4355-A950-AC16916806FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E6A430F3-5865-4C81-85E6-E78D8D24F0A9} = {2EAECD7E-FD53-4BE8-974E-6A9E6C3FDC25}
+		{C6E678AE-6150-4355-A950-AC16916806FB} = {9035F580-E911-49E2-9BFF-364A808D9EE5}
 	EndGlobalSection
 EndGlobal

@@ -65,6 +65,14 @@ namespace Aliencube.AdalWrapper
         Task<IAuthenticationResultWrapper> AcquireTokenByDeviceCodeAsync(IDeviceCodeResultWrapper deviceCodeResult);
 
         /// <summary>Acquires security token from the authority.</summary>
+        /// <remarks>This feature is supported only for Azure Active Directory and Active Directory Federation Services (ADFS) on Windows 10.</remarks>
+        /// <param name="resource">Identifier of the target resource that is the recipient of the requested token.</param>
+        /// <param name="clientId">Identifier of the client requesting the token.</param>
+        /// <param name="userCredential">The user credential to use for token acquisition.</param>
+        /// <returns>It contains Access Token, Refresh Token and the Access Token's expiration time.</returns>
+        Task<IAuthenticationResultWrapper> AcquireTokenAsync(string resource, string clientId, UserCredential userCredential);
+
+        /// <summary>Acquires security token from the authority.</summary>
         /// <param name="resource">Identifier of the target resource that is the recipient of the requested token.</param>
         /// <param name="clientId">Identifier of the client requesting the token.</param>
         /// <param name="userAssertion">The assertion to use for token acquisition.</param>

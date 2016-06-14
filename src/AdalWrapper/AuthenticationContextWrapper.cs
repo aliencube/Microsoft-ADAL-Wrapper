@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using Aliencube.AdalWrapper.Exceptions;
-
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
 namespace Aliencube.AdalWrapper
@@ -12,8 +10,6 @@ namespace Aliencube.AdalWrapper
     /// </summary>
     public class AuthenticationContextWrapper : IAuthenticationContextWrapper
     {
-        private readonly AuthenticationContext _context;
-
         private bool _disposed;
 
         /// <summary>
@@ -27,7 +23,7 @@ namespace Aliencube.AdalWrapper
                 throw new ArgumentNullException(nameof(context));
             }
 
-            this._context = context;
+            this.Context = context;
         }
 
         /// <summary>
@@ -41,7 +37,7 @@ namespace Aliencube.AdalWrapper
                 throw new ArgumentNullException(nameof(authority));
             }
 
-            this._context = new AuthenticationContext(authority);
+            this.Context = new AuthenticationContext(authority);
         }
 
         /// <summary>
@@ -61,7 +57,7 @@ namespace Aliencube.AdalWrapper
                 throw new ArgumentNullException(nameof(tokenCache));
             }
 
-            this._context = new AuthenticationContext(authority, tokenCache);
+            this.Context = new AuthenticationContext(authority, tokenCache);
         }
 
         /// <summary>
@@ -76,7 +72,7 @@ namespace Aliencube.AdalWrapper
                 throw new ArgumentNullException(nameof(authority));
             }
 
-            this._context = new AuthenticationContext(authority, validateAuthority);
+            this.Context = new AuthenticationContext(authority, validateAuthority);
         }
 
         /// <summary>
@@ -97,24 +93,13 @@ namespace Aliencube.AdalWrapper
                 throw new ArgumentNullException(nameof(tokenCache));
             }
 
-            this._context = new AuthenticationContext(authority, validateAuthority, tokenCache);
+            this.Context = new AuthenticationContext(authority, validateAuthority, tokenCache);
         }
 
         /// <summary>
         /// Gets the <see cref="AuthenticationContext"/> instance.
         /// </summary>
-        public AuthenticationContext Context
-        {
-            get
-            {
-                if (this._context == null)
-                {
-                    throw new AuthenticationContextNullException();
-                }
-
-                return this._context;
-            }
-        }
+        public AuthenticationContext Context { get; }
 
         /// <summary>
         /// Gets address of the authority to issue token.
@@ -214,6 +199,33 @@ namespace Aliencube.AdalWrapper
             }
 
             var result = await this.Context.AcquireTokenByDeviceCodeAsync(deviceCodeResult.Result).ConfigureAwait(false);
+            return new AuthenticationResultWrapper(result);
+        }
+
+        /// <summary>Acquires security token from the authority.</summary>
+        /// <remarks>This feature is supported only for Azure Active Directory and Active Directory Federation Services (ADFS) on Windows 10.</remarks>
+        /// <param name="resource">Identifier of the target resource that is the recipient of the requested token.</param>
+        /// <param name="clientId">Identifier of the client requesting the token.</param>
+        /// <param name="userCredential">The user credential to use for token acquisition.</param>
+        /// <returns>It contains Access Token, Refresh Token and the Access Token's expiration time.</returns>
+        public async Task<IAuthenticationResultWrapper> AcquireTokenAsync(string resource, string clientId, UserCredential userCredential)
+        {
+            if (string.IsNullOrWhiteSpace(resource))
+            {
+                throw new ArgumentNullException(nameof(resource));
+            }
+
+            if (string.IsNullOrWhiteSpace(clientId))
+            {
+                throw new ArgumentNullException(nameof(clientId));
+            }
+
+            if (userCredential == null)
+            {
+                throw new ArgumentNullException(nameof(userCredential));
+            }
+
+            var result = await this.Context.AcquireTokenAsync(resource, clientId, userCredential).ConfigureAwait(false);
             return new AuthenticationResultWrapper(result);
         }
 
