@@ -1,0 +1,67 @@
+# for dev/master branch
+-
+  version: 1.0.0.{build}
+  pull_requests:
+    do_not_increment_build_number: true
+  branches:
+    only:
+    - dev
+    - master
+  skip_tags: true
+  image: Visual Studio 2015
+  configuration: Debug
+  platform: Any CPU
+  build_script:
+  - cmd: tools\nuget restore AdalWrapper.sln
+  - cmd: msbuild "src\AdalWrapper\AdalWrapper.csproj" /t:ReBuild /v:minimal /p:Configuration=Debug;TargetFrameworkVersion=v4.5;DefineConstants="DEBUG;TRACE";OutPutPath=bin\Debug\net45
+  test_script:
+  - cmd: tools\nuget restore AdalWrapper.sln
+  - cmd: msbuild "test\AdalWrapper.Tests\AdalWrapper.Tests.csproj" /t:ReBuild /v:minimal /p:Configuration=Debug;TargetFrameworkVersion=v4.5;DefineConstants="DEBUG;TRACE";OutPutPath=bin\Debug\net45
+  - cmd: packages\xunit.runner.console.2.1.0\tools\xunit.console.exe test\AdalWrapper.Tests\bin\Debug\Aliencube.AdalWrapper.Tests.dll -appveyor
+
+# for release/all branch
+-
+  version: 1.0.0.{build}
+  pull_requests:
+    do_not_increment_build_number: true
+  branches:
+    only:
+    - release/all
+  skip_tags: true
+  image: Visual Studio 2015
+  configuration: Release
+  platform: Any CPU
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+  environment:
+    github_auth_token:
+      secure: 3tp7rCl4cvk/WDYBaeodIlmalNiYVWQYxE1wmVU7aMbkMKP0WtlMjjOU2yhX0D4n
+  build_script:
+  - cmd: tools\nuget restore AdalWrapper.sln
+  - cmd: msbuild AdalWrapper.sln /t:ReBuild /v:minimal /p:Configuration=Release;TargetFrameworkVersion=v4.5;DefineConstants="TRACE";OutPutPath=bin\Release\net45\
+  test_script:
+  - cmd: tools\nuget restore AdalWrapper.sln
+  - cmd: msbuild AdalWrapper.sln /t:ReBuild /v:minimal /p:Configuration=Release;TargetFrameworkVersion=v4.5;DefineConstants="TRACE";OutPutPath=bin\Release\net45\
+  - cmd: packages\xunit.runner.console.2.1.0\tools\xunit.console.exe test\AdalWrapper.Tests\bin\Release\net45\Aliencube.AdalWrapper.Tests.dll -appveyor
+  after_test:
+  - cmd: tools\nuget pack "src\AdalWrapper\AdalWrapper.nuspec" -Version %APPVEYOR_BUILD_VERSION%
+  artifacts:
+  - path: '**\AdalWrapper.*.nupkg'
+    name: AdalWrapper
+  deploy:
+  - provider: NuGet
+    api_key:
+      secure: ZdI7BA2YRQg/yRMPbRGTTJeGWj3X3o8kNhf4LeA5YkV072GpmKwQ3aW+KVgMbkZX
+    artifact: AdalWrapper
+    on:
+      branch: release/all
+      platform: Any CPU
+      configuration: Release
+  after_deploy:
+  - cmd: git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_auth_token):x-oauth-basic@github.com`n"
+  - cmd: git push origin --delete release/all
