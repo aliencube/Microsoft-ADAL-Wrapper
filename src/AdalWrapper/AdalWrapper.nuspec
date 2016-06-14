@@ -10,15 +10,15 @@
     <projectUrl>https://github.com/aliencube/Microsoft-ADAL-Wrapper</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <summary>
-      This provides wrapper class library for ADAL (https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory).
+      This provides a wrapper class library for ADAL (https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory).
     </summary>
     <description>
       <![CDATA[
-        This provides wrapper class library for ADAL (https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory).
+        This provides a wrapper class library for ADAL (https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory).
         ]]>
     </description>
     <copyright>Aliencube Community. All rights reserved.</copyright>
-    <tags>ADAL, Azure, AD, AAD, Identity, Authentication, .NET</tags>
+    <tags>Aliencube, ADAL, Azure, AD, AAD, Identity, Authentication, .NET</tags>
     <dependencies>
       <dependency id="Microsoft.IdentityModel.Clients.ActiveDirectory" version="3.10.305231913" />
     </dependencies>

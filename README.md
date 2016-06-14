@@ -32,7 +32,7 @@ var result = new Mock<IAuthenticationResultWrapper>();
 result.SetupGet(p => p.AccessToken).Returns("[ACCESS_TOKEN]");
 
 var wrapper = new Mock<IAuthenticationContextWrapper>();
-wrapper.Setup(p => p.AcquireTokenAsync(It.IsAny<string>(), It.IsAny<ClientCredential>())).ReturnsAsync(result.Object).
+wrapper.Setup(p => p.AcquireTokenAsync(It.IsAny<string>(), It.IsAny<ClientCredential>())).ReturnsAsync(result.Object);
 ```
 
 By doing so, those `AuthenticationContext` and `AuthenticationResult` are under our control for mocking by their wrapping classes.
@@ -49,7 +49,7 @@ Your contributions are always welcome! All your work should be done in your fork
 
 > The MIT License (MIT)
 >
-> Copyright (c) 2014 [aliencube.org](http://aliencube.org)
+> Copyright (c) 2016 [aliencube.org](http://aliencube.org)
 > 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 > 
