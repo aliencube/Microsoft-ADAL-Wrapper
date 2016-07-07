@@ -1,0 +1,63 @@
+{
+  "id": "Aliencube.AdalWrapper",
+  "version": "1.0.0.0",
+  "title": "Wrapper for Active Directory Authentication Library",
+  "authors": [
+    "justinyoo"
+  ],
+
+  "packOptions": {
+    "owners": [
+      "justinyoo"
+    ],
+    "licenseUrl": "https://github.com/aliencube/Microsoft-ADAL-Wrapper/blob/master/LICENSE",
+    "projectUrl": "https://github.com/aliencube/Microsoft-ADAL-Wrapper",
+    "summary": "This provides a wrapper class library for ADAL (https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory).",
+    "tags": [
+      "Aliencube",
+      "ADAL",
+      "Azure",
+      "AD",
+      "AAD",
+      "Identity",
+      "Authentication",
+      ".NET"
+    ],
+    "requireLicenseAcceptance": true
+  },
+
+  "description": "This provides a wrapper class library for ADAL (https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory).",
+  "copyright": "Aliencube Community. All rights reserved.",
+
+  "frameworks": {
+    "net451": {
+      "dependencies": {
+        "System.Runtime": "4.0.10.0",
+        "System.Threading.Tasks": "4.0.0"
+      }
+    },
+
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "dnxcore50",
+        "portable-net45+win8"
+      ],
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "version": "1.0.0",
+          "type": "platform"
+        }
+      }
+    }
+  },
+
+  "dependencies": {
+    "Microsoft.IdentityModel.Clients.ActiveDirectory": "3.10.305231913"
+  },
+
+  "buildOptions": {
+    "define": [ "DEBUG", "TRACE" ],
+    "xmlDoc": true
+  }
+}

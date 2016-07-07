@@ -1,7 +1,14 @@
 ﻿using System;
+
+#if NET451
 using System.Runtime.Serialization;
+#endif
 
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
+
+#if !NET451
+using ApplicationException = System.InvalidOperationException;
+#endif
 
 namespace Aliencube.AdalWrapper.Exceptions
 {
@@ -37,6 +44,7 @@ namespace Aliencube.AdalWrapper.Exceptions
         {
         }
 
+#if NET451
         /// <summary>
         /// Initialises a new instance of the <see cref="AuthenticationContextNullException"/> class.
         /// </summary>
@@ -46,5 +54,6 @@ namespace Aliencube.AdalWrapper.Exceptions
             : base(info, context)
         {
         }
+#endif
     }
 }
