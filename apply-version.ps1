@@ -16,14 +16,7 @@ foreach($project in $projects)
 	$projectJson.version = $Version
 	$projectJson | ConvertTo-Json -Depth 999 | Out-File -FilePath $projectPath\project.json -Encoding utf8
 
-	if ($LASTEXITCODE -ne 0)
-	{
-		Write-Host "Updating version of $projectName to $Version failure" -ForegroundColor Red
-	}
-	else
-	{
-		Write-Host "Updating version of $projectName to $Version success" -ForegroundColor Green
-	}
+	Write-Host "Updating version of $projectName to $Version success" -ForegroundColor Green
 
 	$exitCode += $LASTEXITCODE
 }
