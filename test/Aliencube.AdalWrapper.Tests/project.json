@@ -1,5 +1,5 @@
-﻿{
-  "version": "1.0.0.0",
+{
+  "version": "1.0.0-*",
 
   "testRunner": "xunit",
 
@@ -28,7 +28,7 @@
   },
 
   "dependencies": {
-    "AdalWrapper": "1.0.0.0",
+    "Aliencube.AdalWrapper": "1.0.0-*",
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
     "FluentAssertions": "4.10.0",
     "Microsoft.IdentityModel.Clients.ActiveDirectory": "3.10.305231913",
