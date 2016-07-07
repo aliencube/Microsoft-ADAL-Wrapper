@@ -7,11 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		AdalWrapper.sln.DotSettings = AdalWrapper.sln.DotSettings
+		apply-version.ps1 = apply-version.ps1
 		appveyor.yml = appveyor.yml
+		build-nuget-package.ps1 = build-nuget-package.ps1
+		build-solution.ps1 = build-solution.ps1
 		build.bat = build.bat
 		global.json = global.json
 		LICENSE = LICENSE
 		README.md = README.md
+		run-tests.ps1 = run-tests.ps1
 		Settings.StyleCop = Settings.StyleCop
 	EndProjectSection
 EndProject
