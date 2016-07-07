@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "Aliencube.AdalWrapper",
   "version": "1.0.0.0",
   "title": "Wrapper for Active Directory Authentication Library",
@@ -57,6 +57,7 @@
   },
 
   "buildOptions": {
-    "define": [ "DEBUG", "TRACE" ]
+    "define": [ "DEBUG", "TRACE" ],
+    "xmlDoc": true
   }
 }

@@ -39,6 +39,7 @@ namespace Aliencube.AdalWrapper.Tests
             return await this._authContext.AcquireTokenAsync(resource, credential).ConfigureAwait(false);
         }
 
+#if NET45
         /// <summary>
         /// Gets the acquire token.
         /// </summary>
@@ -52,5 +53,6 @@ namespace Aliencube.AdalWrapper.Tests
             var credential = new UserPasswordCredential(username, password);
             return await this._authContext.AcquireTokenAsync(resource, clientId, credential).ConfigureAwait(false);
         }
+#endif
     }
 }
