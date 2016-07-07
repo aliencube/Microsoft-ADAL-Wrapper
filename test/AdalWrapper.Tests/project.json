@@ -1,10 +1,12 @@
-{
+﻿{
   "version": "1.0.0.0",
 
+  "testRunner": "xunit",
+
   "frameworks": {
-    "net45": {
+    "net451": {
       "dependencies": {
-        "System.Runtime": "4.0.0",
+        "System.Runtime": "4.0.10.0",
         "System.Threading.Tasks": "4.0.0"
       }
     },
@@ -19,13 +21,15 @@
         "Microsoft.NETCore.App": {
           "version": "1.0.0",
           "type": "platform"
-        }
+        },
+        "System.Diagnostics.TraceSource": "4.0.0"
       }
     }
   },
 
   "dependencies": {
     "AdalWrapper": "1.0.0.0",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
     "FluentAssertions": "4.10.0",
     "Microsoft.IdentityModel.Clients.ActiveDirectory": "3.10.305231913",
     "Moq": "4.6.25-alpha",

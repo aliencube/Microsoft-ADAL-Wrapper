@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>a0fda38c-85c3-49cc-97ff-7355bd2dbba9</ProjectGuid>
+    <ProjectGuid>193b4ebe-50d2-44a2-827d-31ffdad24770</ProjectGuid>
     <RootNamespace>Aliencube.AdalWrapper.Tests</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>

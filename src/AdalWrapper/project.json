@@ -30,9 +30,9 @@
   "copyright": "Aliencube Community. All rights reserved.",
 
   "frameworks": {
-    "net45": {
+    "net451": {
       "dependencies": {
-        "System.Runtime": "4.0.0",
+        "System.Runtime": "4.0.10.0",
         "System.Threading.Tasks": "4.0.0"
       }
     },

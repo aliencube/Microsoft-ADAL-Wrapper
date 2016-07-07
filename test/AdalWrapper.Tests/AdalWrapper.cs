@@ -39,7 +39,7 @@ namespace Aliencube.AdalWrapper.Tests
             return await this._authContext.AcquireTokenAsync(resource, credential).ConfigureAwait(false);
         }
 
-#if NET45
+#if NET451
         /// <summary>
         /// Gets the acquire token.
         /// </summary>

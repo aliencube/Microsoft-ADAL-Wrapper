@@ -48,7 +48,7 @@ namespace Aliencube.AdalWrapper.Tests
             result.AccessToken.Should().BeEquivalentTo(accessToken);
         }
 
-#if NET45
+#if NET451
         /// <summary>
         /// Tests whether the method should return result or not.
         /// </summary>
