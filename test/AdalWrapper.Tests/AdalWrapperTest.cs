@@ -48,6 +48,7 @@ namespace Aliencube.AdalWrapper.Tests
             result.AccessToken.Should().BeEquivalentTo(accessToken);
         }
 
+#if NET451
         /// <summary>
         /// Tests whether the method should return result or not.
         /// </summary>
@@ -66,5 +67,6 @@ namespace Aliencube.AdalWrapper.Tests
             var result = await this._wrapper.AcquireTokenAsync(resource, clientId, username, password).ConfigureAwait(false);
             result.AccessToken.Should().BeEquivalentTo(accessToken);
         }
+#endif
     }
 }
