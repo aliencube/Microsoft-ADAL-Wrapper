@@ -52,7 +52,7 @@
   },
 
   "dependencies": {
-    "Microsoft.IdentityModel.Clients.ActiveDirectory": "3.10.305231913"
+    "Microsoft.IdentityModel.Clients.ActiveDirectory": "3.13.1"
   },
 
   "buildOptions": {
