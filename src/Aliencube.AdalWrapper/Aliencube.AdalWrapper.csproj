@@ -5,7 +5,7 @@
     <Copyright>Aliencube Community. All rights reserved.</Copyright>
     <AssemblyTitle>Wrapper for Active Directory Authentication Library</AssemblyTitle>
     <Authors>justinyoo</Authors>
-    <TargetFrameworks>net461;netcoreapp1.0</TargetFrameworks>
+    <TargetFramework>netstandard1.6</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Aliencube.AdalWrapper</AssemblyName>
     <PackageId>Aliencube.AdalWrapper</PackageId>
@@ -13,8 +13,6 @@
     <PackageProjectUrl>https://github.com/aliencube/Microsoft-ADAL-Wrapper</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/aliencube/Microsoft-ADAL-Wrapper/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">$(PackageTargetFallback);dotnet5.6;dnxcore50;portable-net45+win8</PackageTargetFallback>
-    <RuntimeFrameworkVersion Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">1.0.4</RuntimeFrameworkVersion>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -22,13 +20,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="3.19.8" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <PackageReference Include="System.Runtime" Version="4.3.0" />
-    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
 </Project>
